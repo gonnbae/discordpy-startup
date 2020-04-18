@@ -36,7 +36,9 @@ async def on_member_join(member):
     channel = bot.get_channel(CHANNEL_ID)  
     await channel.send('こんにちは、' +str(member.mention)+
                        'さん！よろしくお願いします！👍')
-    
+@bot.event    
+if message.content.startswith('対戦募集')
+    await message.channel.send('<@&役職のID>　' + message.author.name + 'さんが対戦募集しています！')
 
 
 
