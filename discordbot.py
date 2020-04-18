@@ -21,6 +21,10 @@ async def ping(ctx):
 async def neko(ctx):
     await ctx.send('にゃーん')
 
+@bot.command()
+async def chimpo(ctx):
+    await ctx.send('ちんちん')
+    
     
 
 bot.run(token)
