@@ -29,8 +29,9 @@ async def chimpo(ctx):
 async def on_member_join(member):  
     CHANNEL_ID = 694553669055807508 
     channel = bot.get_channel(CHANNEL_ID)  
-    await channel.send(str(member.mention)+
-                       'さん、ようこそ！Client.get_channel(694564735231721542)にご記入お願いします！よろしくお願いします👍')  
+    await channel.send('こんにちは、' +str(member.mention)+
+                       'さん！よろしくお願いします！👍')
+    
 
 
 
