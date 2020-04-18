@@ -36,8 +36,7 @@ async def on_member_join(member):
 
 
 @bot.event
-class AnnounceMatchMessageMaker(MessageMaker):
-    def __init__(self):
+    async def __init__(self):
         super(AnnounceMatchMessageMaker, self).__init__()
         MATCH_CHANNEL_ID =701111381633531905
 　　　　STARVED_MATCHING =<@&701098449864622091>
