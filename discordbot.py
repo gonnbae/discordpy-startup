@@ -30,9 +30,7 @@ async def on_member_join(member):
     CHANNEL_ID = 694553669055807508 
     channel = bot.get_channel(CHANNEL_ID)  
     await channel.send(str(member.mention)+
-                       'さん、ようこそ！
-                       694564735231721542 と　
-                       694564803594813501にご記入お願いします！よろしくお願いします👍')  
+                       'さん、ようこそ！Client.get_channel(694564735231721542)にご記入お願いします！よろしくお願いします👍')  
 
 
 
