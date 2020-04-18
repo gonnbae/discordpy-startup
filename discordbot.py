@@ -25,6 +25,13 @@ async def neko(ctx):
 async def chimpo(ctx):
     await ctx.send('ちんちん')
     
-    
+@bot.event  
+async def on_member_join(member):  
+    CHANNEL_ID = 694553669055807508 
+    channel = bot.get_channel(CHANNEL_ID)  
+    await channel.send(str(member.mention)+
+                       'さん、ようこそ！#自己紹介 と#フレンドコード にご記入お願いします！よろしくお願いします👍')  
+
+
 
 bot.run(token)
