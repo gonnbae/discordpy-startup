@@ -25,6 +25,11 @@ async def neko(ctx):
 async def chimpo(ctx):
     await ctx.send('ちんちん')
     
+@bot.command()
+async def inu(ctx):
+    await ctx.send('わんわん')
+        
+    
 @bot.event  
 async def on_member_join(member):  
     CHANNEL_ID = 694553669055807508 
