@@ -32,8 +32,6 @@ async def on_member_join(member):
     await channel.send('こんにちは、' +str(member.mention)+
                        'さん！よろしくお願いします！👍')
     
-MATCH_CHANNEL_ID =701111381633531905
-STARVED_MATCHING =<@&701098449864622091>
 
 # discordAPIモジュール
 from discord import message
@@ -47,6 +45,8 @@ from nessmado_discord_manager import ChannelManager
 
 class AnnounceMatchMessageMaker(MessageMaker):
     def __init__(self):
+        MATCH_CHANNEL_ID =701111381633531905
+　　　　STARVED_MATCHING =<@&701098449864622091>
         super(AnnounceMatchMessageMaker, self).__init__()
         self.keyword = '対戦募集'
         self.output_replies = []
