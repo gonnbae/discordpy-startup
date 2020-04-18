@@ -32,7 +32,12 @@ async def on_member_join(member):
     await channel.send('こんにちは、' +str(member.mention)+
                        'さん！よろしくお願いします！👍')
     
-
+@bot.event
+async def on_message(message):
+    if message.content.startswith("おはよう"):
+        if bot.user != message.author:
+            text = message.author.mention+"さんおはよう"
+            await bot.send_message(message.channel, text)
 
 
 bot.run(token)
