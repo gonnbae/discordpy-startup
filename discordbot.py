@@ -45,9 +45,9 @@ from nessmado_discord_manager import ChannelManager
 
 class AnnounceMatchMessageMaker(MessageMaker):
     def __init__(self):
+        super(AnnounceMatchMessageMaker, self).__init__()
         MATCH_CHANNEL_ID =701111381633531905
 　　　　STARVED_MATCHING =<@&701098449864622091>
-        super(AnnounceMatchMessageMaker, self).__init__()
         self.keyword = '対戦募集'
         self.output_replies = []
         self.message_pattern = 0
