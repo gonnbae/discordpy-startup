@@ -39,8 +39,8 @@ async def on_member_join(member):
 class AnnounceMatchMessageMaker(MessageMaker):
     def __init__(self):
         super(AnnounceMatchMessageMaker, self).__init__()
-        MATCH_CHANNEL_ID =701111381633531905
-　　　　STARVED_MATCHING =<@&701098449864622091>
+        MATCH_CHANNEL_ID = 701111381633531905
+　　　　STARVED_MATCHING = <@&701098449864622091>
         self.keyword = '対戦募集'
         self.output_replies = []
         self.message_pattern = 0
