@@ -34,9 +34,9 @@ async def on_member_join(member):
     
 @bot.event
 async def on_message(message):
-    if message.content.startswith("おはよう"):
+    if message.content.startswith('おはよう'):
         if bot.user != message.author:
-            text = message.author.mention+"さんおはよう"
+            text = message.author.mention+'さんおはよう'
             await bot.send_message(message.channel, text)
 
 
