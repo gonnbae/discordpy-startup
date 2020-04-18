@@ -33,14 +33,7 @@ async def on_member_join(member):
                        'さん！よろしくお願いします！👍')
     
 
-# discordAPIモジュール
-from discord import message
-from discord import client
-from discord import channel
 
-# 自作モジュール
-from MyMessageClass.message_maker import MessageMaker
-from nessmado_discord_manager import ChannelManager
 
 
 class AnnounceMatchMessageMaker(MessageMaker):
