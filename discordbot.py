@@ -49,7 +49,7 @@ class AnnounceMatchMessageMaker(MessageMaker):
         print(type(self.keychannel))
         self.starved_matching = self.ch_manager.STARVED_MATCHING
 
-    async def _makeMessage(self, message, client, channel=None) -> str:
+    async def _makeMessage(self, message, bot, channel=None) -> str:
         asyncio_result = None
         if self.message_pattern == -1:
             return asyncio_result
@@ -57,21 +57,21 @@ class AnnounceMatchMessageMaker(MessageMaker):
             self.reply = f'{message.author.mention} さんが対戦募集を開始しました。 {self.starved_matching}\n \
                 参加したい方はこちらから→{message.channel.mention}  \n'
         self.output_replies.append(
-            [client.get_channel(self.ch_manager.MATCH_CHANNEL_ID), self.reply])
+            [bot.get_channel(self.ch_manager.MATCH_CHANNEL_ID), self.reply])
         for reply_channel, reply_content in self.output_replies:
             asyncio_result = await reply_channel.send(reply_content)
         return asyncio_result
 
-    async def executeFunction(self, message, client) -> str:
+    async def executeFunction(self, message, bot) -> str:
         asyncio_result = None
         # 「対戦募集」から始まってなかったら -1 パターンのメッセージを作成
         if not message.content.startswith(self.keyword):
             self.message_pattern = -1
-            asyncio_result = await self._makeMessage(message, client)
+            asyncio_result = await self._makeMessage(message, bot)
             return asyncio_result
         # 対戦募集チャンネル「以外」でのメッセージはスルーする。
         if message.channel.id == self.keychannel:
-            asyncio_result = await self._makeMessage(message, client)
+            asyncio_result = await self._makeMessage(message, bot)
         return asyncio_result
 
     def checkTriggers(self, message) -> bool:
