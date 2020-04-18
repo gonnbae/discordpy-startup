@@ -35,7 +35,7 @@ async def on_member_join(member):
 
 
 
-
+@bot.event
 class AnnounceMatchMessageMaker(MessageMaker):
     def __init__(self):
         super(AnnounceMatchMessageMaker, self).__init__()
