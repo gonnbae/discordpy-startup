@@ -52,6 +52,11 @@ async def on_message(message):
         else:
             await message.channel.send('アナタノ命令ハ聞ケナイ')
     
-
+@bot.event
+async def on_message(message):
+    if message.content.startswith("おはよう"):#おはように反応
+        if bot.user != message.author:#自身には反応しない
+            text = message.author.mention+"さんおはよう"#message.author.mentionでメンション
+            await bot.send_message(message.channel, text)
     
 bot.run(token)
