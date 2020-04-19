@@ -43,7 +43,14 @@ async def on_message(message):
         await message.channel.send(f'<@&701098449864622091>{message.author.name}さんが対戦募集しています！')
     await bot.process_commands(message)
 
-
+@bot.event
+async def on_message(message):
+    if message.content == '/cleanup':
+        if message.author.guild_permissions.administrator:
+            await message.channel.purge()
+            await message.channel.send('全テヲ抹消スル')
+        else:
+            await message.channel.send('アナタノ命令ハ聞ケナイ')
     
 
     
