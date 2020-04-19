@@ -41,7 +41,7 @@ async def on_member_join(member):
 async def on_message(message):
     if message.content.startswith('対戦募集')
         await message.channel.send(<@&701098449864622091>+{message.author.name}+'さんが対戦募集しています！')
-        await bot.process_commands(message)
+    await bot.process_commands(message)
 
 
 bot.run(token)
