@@ -37,15 +37,7 @@ async def on_member_join(member):
     await channel.send('こんにちは、' +str(member.mention)+
                        'さん！よろしくお願いします！👍')
 
-@bot.event
-async def on_message(message):
-    if message.content == '/cleanup':
-        if message.author.guild_permissions.administrator:
-            await message.channel.purge()
-            await message.channel.send('全テヲ抹消シタ')
-        else:
-            await message.channel.send('アナタノ命令ハ聞ケナイ')
-    
+
     
     
 @bot.event
