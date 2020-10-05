@@ -43,6 +43,11 @@ async def on_message(message):
     if message.content.startswith('対戦募集'):
         await message.channel.send(f'<@&701098449864622091>{message.author.name}さんが対戦募集していますん')
     await bot.process_commands(message)
+    
+    if message.content.startswith('たいぼ'):
+        await message.channel.send(f'<@&701098449864622091>{message.author.name}さんがたいぼしていますん')
+    await bot.process_commands(message)
+
 
 
     
