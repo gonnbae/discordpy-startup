@@ -28,7 +28,12 @@ async def inu(ctx):
     await ctx.send('わんわん')
         
     
-
+@bot.event  
+async def on_member_join(member):  
+    CHANNEL_ID = 694553669055807508 
+    channel = bot.get_channel(CHANNEL_ID)  
+    await channel.send('こんにちは、' +str(member.mention)+
+                       'さん！よろしくお願いします！👍')
     
     
 @bot.event
@@ -41,6 +46,9 @@ async def on_message(message):
         await message.channel.send(f'<@&701098449864622091>{message.author.name}さんがたいぼしていますん')
     await bot.process_commands(message)
 
+    if message.content.startswith('対募'):
+        await message.channel.send(f'<@&701098449864622091>{message.author.name}さんがたいぼしていますん')
+    await bot.process_commands(message)
 
 
     
