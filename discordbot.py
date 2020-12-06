@@ -13,6 +13,12 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
+@bot.event  
+async def on_member_join(member):  
+    CHANNEL_ID = 694553669055807508 
+    channel = bot.get_channel(CHANNEL_ID)  
+    await channel.send('こんにちは、' +str(member.mention)+
+                       'さん！よろしくお願いします！👍')
 
 
 @bot.command()
